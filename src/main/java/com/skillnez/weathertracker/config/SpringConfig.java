@@ -13,7 +13,7 @@ import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("com.skillnez.weathertracker")
+@ComponentScan(basePackages = "com.skillnez.weathertracker")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
