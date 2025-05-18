@@ -6,15 +6,14 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@RequiredArgsConstructor
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode
 @Builder
 @Table(name = "users")
-public class User {
+@NoArgsConstructor
+@AllArgsConstructor
+public class User implements BaseEntity<Long> {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)

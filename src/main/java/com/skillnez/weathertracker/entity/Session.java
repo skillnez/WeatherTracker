@@ -8,19 +8,19 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@RequiredArgsConstructor
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode
 @Builder
 @Table(name = "sessions")
-public class Session {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Session implements BaseEntity<UUID> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
+    @Getter
     private UUID id;
 
     @ManyToOne

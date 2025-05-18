@@ -9,12 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="fix: fix DataSourceConfig and FlywayConfig">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/User.java" afterDir="false" />
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: add entity model hibernate mapping">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/LocationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/SessionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/AuthInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/DataSourceConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/FlywayConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/HibernateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/TransactionConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -238,7 +250,7 @@
       <workItem from="1747506353629" duration="2011000" />
       <workItem from="1747567525013" duration="315000" />
       <workItem from="1747567846863" duration="146000" />
-      <workItem from="1747567999511" duration="6279000" />
+      <workItem from="1747567999511" duration="13545000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -272,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747482084540</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add entity model hibernate mapping">
+      <option name="closed" value="true" />
+      <created>1747574573641</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747574573641</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +303,8 @@
     <MESSAGE value="feat: add app configuration by java based spring configuration. Added Hibernate, Flyway, Log4j in project" />
     <MESSAGE value="fix: fix log4j.properties" />
     <MESSAGE value="fix: fix DataSourceConfig and FlywayConfig" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix DataSourceConfig and FlywayConfig" />
+    <MESSAGE value="feat: add entity model hibernate mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add entity model hibernate mapping" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

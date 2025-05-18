@@ -6,15 +6,14 @@ import lombok.*;
 import java.math.BigDecimal;
 
 @Entity
-@RequiredArgsConstructor
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode
 @Builder
 @Table(name = "locations")
-public class Location {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Location implements BaseEntity<Long> {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
