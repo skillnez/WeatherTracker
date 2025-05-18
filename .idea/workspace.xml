@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="fix: fix log4j.properties">
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="fix: fix DataSourceConfig and FlywayConfig">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/DataSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +70,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
     &quot;Maven.WeatherTracker [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [clean,package].executor&quot;: &quot;Run&quot;,
     &quot;Maven.WeatherTracker [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.WeatherTracker [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.WeatherTracker [dependency:tree,|,find...].executor&quot;: &quot;Run&quot;,
@@ -77,6 +80,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 11.0.2.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/skill/IdeaProjects/WeatherTracker/src/main/resources&quot;,
@@ -88,7 +92,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15136719&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.23709902&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -112,6 +116,7 @@
       <command value="mvn compile" />
       <command value="mvn dependency:tree | find &quot;commons-logging&quot;" />
       <command value="mvn package" />
+      <command value="mvn clean package" />
     </option>
   </component>
   <component name="RunManager">
@@ -229,7 +234,11 @@
       <workItem from="1747326179091" duration="5049000" />
       <workItem from="1747409515216" duration="7460000" />
       <workItem from="1747475270716" duration="677000" />
-      <workItem from="1747476347817" duration="1462000" />
+      <workItem from="1747476347817" duration="2370000" />
+      <workItem from="1747506353629" duration="2011000" />
+      <workItem from="1747567525013" duration="315000" />
+      <workItem from="1747567846863" duration="146000" />
+      <workItem from="1747567999511" duration="6279000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -255,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747420856797</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix: fix DataSourceConfig and FlywayConfig">
+      <option name="closed" value="true" />
+      <created>1747482084540</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747482084540</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +282,11 @@
     <MESSAGE value="Init commit" />
     <MESSAGE value="feat: add app configuration by java based spring configuration. Added Hibernate, Flyway, Log4j in project" />
     <MESSAGE value="fix: fix log4j.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix log4j.properties" />
+    <MESSAGE value="fix: fix DataSourceConfig and FlywayConfig" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fix DataSourceConfig and FlywayConfig" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
