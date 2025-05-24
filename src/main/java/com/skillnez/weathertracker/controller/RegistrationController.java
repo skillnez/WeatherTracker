@@ -1,8 +1,10 @@
 package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.UserRegistrationDto;
+import com.skillnez.weathertracker.service.RegistrationService;
 import com.skillnez.weathertracker.utils.RegistrationValidator;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,9 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RegistrationController {
 
     private final RegistrationValidator registrationValidator;
+    private final RegistrationService registrationService;
 
-    public RegistrationController(RegistrationValidator registrationValidator) {
+    @Autowired
+    public RegistrationController(RegistrationValidator registrationValidator, RegistrationService registrationService) {
         this.registrationValidator = registrationValidator;
+        this.registrationService = registrationService;
     }
 
     @GetMapping("/register")
@@ -28,13 +33,13 @@ public class RegistrationController {
     }
 
     @PostMapping("/register")
-    public String register (@ModelAttribute @Valid UserRegistrationDto user, BindingResult bindingResult, Model model) {
-        registrationValidator.validate(user, bindingResult);
+    public String register (@ModelAttribute @Valid UserRegistrationDto userDto, BindingResult bindingResult) {
+        registrationValidator.validate(userDto, bindingResult);
         if (bindingResult.hasErrors()) {
             bindingResult.reject("invalidForm", "The fields are filled in incorrectly");
             return "sign-up-with-errors";
         }
-
+        registrationService.registerUser(userDto);
         return "redirect:/login";
     }
 }

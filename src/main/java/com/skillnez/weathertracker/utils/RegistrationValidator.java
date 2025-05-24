@@ -20,12 +20,12 @@ public class RegistrationValidator implements Validator {
     }
 
     @Override
-    public boolean supports(@NonNull Class<?> clazz) {
+    public boolean supports(Class<?> clazz) {
         return UserRegistrationDto.class.isAssignableFrom(clazz);
     }
 
     @Override
-    public void validate(@NonNull Object target, @NonNull Errors errors) {
+    public void validate(Object target, Errors errors) {
         UserRegistrationDto user = (UserRegistrationDto) target;
 
         if (!user.getPassword().equals(user.getRepeatPassword())){
