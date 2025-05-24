@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserRegistrationDto {
+public class UserAuthDto {
     @NotBlank(message = "Account name can't be blank")
     @Size(min = 4, max = 32, message = "Account name must be at least 4 and no more than 32 characters")
     @Pattern(
@@ -26,6 +26,5 @@ public class UserRegistrationDto {
     )
     private String password;
 
-    @NotBlank(message = "Repeat password")
     private String repeatPassword;
 }

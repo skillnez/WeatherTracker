@@ -1,7 +1,7 @@
 package com.skillnez.weathertracker.controller;
 
-import com.skillnez.weathertracker.dto.UserRegistrationDto;
-import com.skillnez.weathertracker.service.RegistrationService;
+import com.skillnez.weathertracker.dto.UserAuthDto;
+import com.skillnez.weathertracker.service.UserService;
 import com.skillnez.weathertracker.utils.RegistrationValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,28 +18,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RegistrationController {
 
     private final RegistrationValidator registrationValidator;
-    private final RegistrationService registrationService;
+    private final UserService userService;
 
     @Autowired
-    public RegistrationController(RegistrationValidator registrationValidator, RegistrationService registrationService) {
+    public RegistrationController(RegistrationValidator registrationValidator, UserService userService) {
         this.registrationValidator = registrationValidator;
-        this.registrationService = registrationService;
+        this.userService = userService;
     }
 
     @GetMapping("/register")
     public String register(Model model) {
-        model.addAttribute("userRegistrationDto", new UserRegistrationDto());
+        model.addAttribute("userAuthDto", new UserAuthDto());
         return "sign-up-with-errors";
     }
 
     @PostMapping("/register")
-    public String register (@ModelAttribute @Valid UserRegistrationDto userDto, BindingResult bindingResult) {
-        registrationValidator.validate(userDto, bindingResult);
+    public String register (@ModelAttribute @Valid UserAuthDto userAuthDto, BindingResult bindingResult) {
+        registrationValidator.validate(userAuthDto, bindingResult);
         if (bindingResult.hasErrors()) {
             bindingResult.reject("invalidForm", "The fields are filled in incorrectly");
             return "sign-up-with-errors";
         }
-        registrationService.registerUser(userDto);
+        userService.registerUser(userAuthDto);
         return "redirect:/login";
     }
 }

@@ -8,12 +8,12 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component
-public class RegistrationValidator implements Validator {
+public class LoginValidator implements Validator {
 
     private final UserService userService;
 
     @Autowired
-    public RegistrationValidator(UserService userService) {
+    public LoginValidator(UserService userService) {
         this.userService = userService;
     }
 
@@ -26,14 +26,9 @@ public class RegistrationValidator implements Validator {
     public void validate(Object target, Errors errors) {
         UserAuthDto user = (UserAuthDto) target;
 
-        if (!user.getPassword().equals(user.getRepeatPassword())){
-            errors.rejectValue("repeatPassword","repeatPassword.invalid", "Passwords don't match");
-        }
-        if (user.getRepeatPassword().isBlank()){
-            errors.rejectValue("repeatPassword","repeatPassword.invalid", "Repeat password");
-        }
-        if (userService.isUserAlreadyRegistered(user)){
-            errors.rejectValue("username","username.invalid", "Username is already in use");
+        if (!userService.isUserAlreadyRegistered(user)){
+            errors.rejectValue("username","username.invalid", "User with this username don't exist");
         }
     }
+
 }
