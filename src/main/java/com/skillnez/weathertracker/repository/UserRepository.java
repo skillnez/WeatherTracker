@@ -15,4 +15,10 @@ public class UserRepository extends BaseRepository<Long, User>{
     public UserRepository(SessionFactory sessionFactory) {
         super(User.class, sessionFactory);
     }
+
+    public Optional<User> findByUsername(String username) {
+        return sessionFactory.getCurrentSession().createQuery(
+                "select u from User u where u.login = :username", User.class)
+                .setParameter("username", username).uniqueResultOptional();
+    }
 }
