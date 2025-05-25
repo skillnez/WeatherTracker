@@ -1,7 +1,7 @@
 package com.skillnez.weathertracker.utils;
 
 import com.skillnez.weathertracker.dto.UserAuthDto;
-import com.skillnez.weathertracker.service.UserService;
+import com.skillnez.weathertracker.service.registration.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -31,9 +31,6 @@ public class RegistrationValidator implements Validator {
         }
         if (user.getRepeatPassword().isBlank()){
             errors.rejectValue("repeatPassword","repeatPassword.invalid", "Repeat password");
-        }
-        if (userService.isUserAlreadyRegistered(user)){
-            errors.rejectValue("username","username.invalid", "Username is already in use");
         }
     }
 }

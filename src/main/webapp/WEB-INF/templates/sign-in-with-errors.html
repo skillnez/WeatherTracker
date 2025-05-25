@@ -21,10 +21,7 @@
         <div class="col-12 col-lg-4 col-md-6 col-sm-12">
             <form th:action="@{/login}" th:object="${userAuthDto}" method="post" class="mt-4">
 
-                <div class="alert alert-danger"
-                     th:if="${#fields.hasGlobalErrors()}"
-                     th:each="err : ${#fields.globalErrors()}"
-                     th:text="${err}"></div>
+                <div th:if="${authError}" class="alert alert-danger" th:text="${authError}"></div>
 
                 <div class="mb-3">
                     <label th:for="*{username}" class="form-label">Username</label>

@@ -9,13 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: complete registration feature and completed form-validation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/LoginValidator.java" afterDir="false" />
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: implement login frontend page and backend validation for login forms">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/AuthFacadeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/RegisterFacadeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/SessionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/UserAuthDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/LoginValidator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/RegistrationValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/RegistrationValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sign-in-with-errors.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sign-in-with-errors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sign-up-with-errors.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sign-up-with-errors.html" afterDir="false" />
@@ -24,6 +29,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,7 +93,7 @@
     "Maven.WeatherTracker [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 11.0.2.executor": "Debug",
+    "Tomcat Server.Tomcat 11.0.2.executor": "Run",
     "git-widget-placeholder": "main",
     "ignore.preview.features.used": "true",
     "ignore.virus.scanning.warn.message": "true",
@@ -96,10 +104,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15136719",
     "project.structure.side.proportion": "0.23709902",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "settings.editor.selected.configurable": "project.propCompiler",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -217,7 +225,9 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="false" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="WeatherTracker:war exploded" />
+        </option>
       </method>
     </configuration>
     <list>
@@ -270,7 +280,8 @@
       <workItem from="1748074494132" duration="11392000" />
       <workItem from="1748089393608" duration="747000" />
       <workItem from="1748090803797" duration="5575000" />
-      <workItem from="1748119047139" duration="2042000" />
+      <workItem from="1748119047139" duration="2521000" />
+      <workItem from="1748159688541" duration="9411000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -336,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748093141140</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: implement login frontend page and backend validation for login forms">
+      <option name="closed" value="true" />
+      <created>1748121276805</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748121276805</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,18 +370,10 @@
     <MESSAGE value="feat: add repository layer" />
     <MESSAGE value="feat: implement base registration page and validation on controller side" />
     <MESSAGE value="feat: complete registration feature and completed form-validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: complete registration feature and completed form-validation" />
+    <MESSAGE value="feat: implement login frontend page and backend validation for login forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement login frontend page and backend validation for login forms" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/LoginController.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="user.repeatPassword" />
