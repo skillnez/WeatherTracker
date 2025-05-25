@@ -1,10 +1,12 @@
 package com.skillnez.weathertracker.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring6.SpringTemplateEngine;
@@ -15,6 +17,20 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 @ComponentScan(basePackages = "com.skillnez.weathertracker")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
+
+    private final AuthInterceptor authInterceptor;
+
+    @Autowired
+    public SpringConfig(AuthInterceptor authInterceptor) {
+        this.authInterceptor = authInterceptor;
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(authInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/login", "/register", "/static/**");
+    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
