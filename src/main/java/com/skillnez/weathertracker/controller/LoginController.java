@@ -5,7 +5,6 @@ import com.skillnez.weathertracker.entity.Session;
 import com.skillnez.weathertracker.service.authorization.AuthFacadeService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -25,8 +24,8 @@ public class LoginController {
         this.authFacadeService = authFacadeService;
     }
 
-    @Value("${session.lifetime.hours}")
-    private int lifetimeHours;
+    @Value("${session.lifetime.seconds}")
+    private int lifetimeSeconds;
 
     @GetMapping("/login")
     public String login(Model model) {
@@ -48,7 +47,7 @@ public class LoginController {
         Cookie sessionCookie = new Cookie("session_token", session.getId().toString());
         sessionCookie.setPath("/");
         sessionCookie.setHttpOnly(true);
-        sessionCookie.setMaxAge(lifetimeHours*60*60);
+        sessionCookie.setMaxAge(lifetimeSeconds);
         response.addCookie(sessionCookie);
 
         return "redirect:/";

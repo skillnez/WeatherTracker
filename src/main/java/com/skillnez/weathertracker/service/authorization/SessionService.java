@@ -26,15 +26,15 @@ public class SessionService {
         this.userRepository = userRepository;
     }
 
-    @Value("${session.lifetime.hours}")
-    private int lifetimeHours;
+    @Value("${session.lifetime.seconds}")
+    private int lifetimeSeconds;
 
     @Transactional
     protected Session save(User user) {
         return sessionRepository.save(
                 Session.builder()
                 .user(user)
-                .expiresAt(LocalDateTime.now().plusHours(lifetimeHours))
+                .expiresAt(LocalDateTime.now().plusSeconds(lifetimeSeconds))
                 .build());
     }
 
