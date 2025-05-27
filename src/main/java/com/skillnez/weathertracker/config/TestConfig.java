@@ -4,10 +4,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.flywaydb.core.Flyway;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,7 +15,14 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:application-test.properties")
-@ComponentScan(basePackages = "com.skillnez.weathertracker")
+//Если componentScan захватит случайно EnableWebMvc или какой-нибудь Interceptor - будет жопа
+//Как вариант нужные сервисы для тестов указывать в TestConfig через @Bean или так как это сделано нижеЫ
+@ComponentScan(
+        basePackages = {
+                "com.skillnez.weathertracker.repository",
+                "com.skillnez.weathertracker.service"
+
+        })
 public class TestConfig {
 
     @Value("${spring.flyway.locations}")

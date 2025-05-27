@@ -21,4 +21,8 @@ public class UserRepository extends BaseRepository<Long, User>{
                 "select u from User u where u.login = :username", User.class)
                 .setParameter("username", username).uniqueResultOptional();
     }
+
+    public void deleteAll () {
+        sessionFactory.getCurrentSession().createQuery("delete from User").executeUpdate();
+    }
 }

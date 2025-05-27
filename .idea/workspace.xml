@@ -9,15 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: finish authorisation implementation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/TestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/integtation/UserServiceIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: convert session duration from hours to seconds. Add test integration tests config and property">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/authorization/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/authorization/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/testconfig/TestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/integtation/UserServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/integtation/UserServiceIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,44 +69,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean,compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [dependency:tree,|,find...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 11.0.2.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/skill/IdeaProjects/WeatherTracker/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15136719&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.23709902&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.WeatherTracker [clean,compile].executor": "Run",
+    "Maven.WeatherTracker [clean,install].executor": "Run",
+    "Maven.WeatherTracker [clean,package].executor": "Run",
+    "Maven.WeatherTracker [clean].executor": "Run",
+    "Maven.WeatherTracker [compile].executor": "Run",
+    "Maven.WeatherTracker [dependency:tree,|,find...].executor": "Run",
+    "Maven.WeatherTracker [install].executor": "Run",
+    "Maven.WeatherTracker [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 11.0.2.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.preview.features.used": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/skill/IdeaProjects/WeatherTracker/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15136719",
+    "project.structure.side.proportion": "0.23709902",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\skill\IdeaProjects\WeatherTracker\src\main\resources" />
@@ -133,9 +132,40 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 11.0.2">
+  <component name="RunManager" selected="JUnit.UserServiceIntegrationTest">
     <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration name="UserServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integtation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integtation" />
+      <option name="MAIN_CLASS_NAME" value="integtation.UserServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceIntegrationTest.databaseShouldBeEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integtation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integtation" />
+      <option name="MAIN_CLASS_NAME" value="integtation.UserServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="databaseShouldBeEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Tomcat 11.0.2" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.2" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -226,10 +256,14 @@
     </configuration>
     <list>
       <item itemvalue="HTTP Request.generated-requests | #3" />
+      <item itemvalue="JUnit.UserServiceIntegrationTest" />
+      <item itemvalue="JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty" />
       <item itemvalue="Tomcat Server.Tomcat 11.0.2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceIntegrationTest" />
+        <item itemvalue="JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty" />
         <item itemvalue="HTTP Request.generated-requests | #3" />
       </list>
     </recent_temporary>
@@ -278,6 +312,8 @@
       <workItem from="1748159688541" duration="23755000" />
       <workItem from="1748271933251" duration="6519000" />
       <workItem from="1748358550320" duration="2797000" />
+      <workItem from="1748365639364" duration="264000" />
+      <workItem from="1748365910695" duration="5178000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -367,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748184555399</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="chore: convert session duration from hours to seconds. Add test integration tests config and property">
+      <option name="closed" value="true" />
+      <created>1748365730161</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748365730161</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +429,9 @@
     <MESSAGE value="feat: implement login frontend page and backend validation for login forms" />
     <MESSAGE value="feat: add optimization for authorisation and registration requests. Implemented session creation after login. Refactored validators" />
     <MESSAGE value="feat: finish authorisation implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: finish authorisation implementation" />
+    <MESSAGE value="chore: finish authorisation implementation" />
+    <MESSAGE value="chore: convert session duration from hours to seconds. Add test integration tests config and property" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: convert session duration from hours to seconds. Add test integration tests config and property" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
