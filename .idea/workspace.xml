@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: convert session duration from hours to seconds. Add test integration tests config and property">
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: configure context for integration tests, complete testConfig, add 1st test to check how it gonna works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/testconfig/TestConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/AuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/AuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/authorization/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/authorization/SessionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/integtation/UserServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/integtation/UserServiceIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +74,11 @@
     "HTTP Request.generated-requests | #3.executor": "Run",
     "JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty.executor": "Run",
     "JUnit.UserServiceIntegrationTest.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.sessionShouldBeCreated.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.sessionShouldBeExpired.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.sessionShouldNotBeExpired.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.shouldGetException.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.userShouldBeRegistered.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.WeatherTracker [clean,compile].executor": "Run",
     "Maven.WeatherTracker [clean,install].executor": "Run",
@@ -132,11 +136,8 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceIntegrationTest">
-    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="UserServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AuthorisationRegistrationIntegrationTest">
+    <configuration name="AuthorisationRegistrationIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherTracker" />
       <extension name="coverage">
         <pattern>
@@ -145,13 +146,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="integtation" />
-      <option name="MAIN_CLASS_NAME" value="integtation.UserServiceIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceIntegrationTest.databaseShouldBeEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthorisationRegistrationIntegrationTest.sessionShouldBeCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherTracker" />
       <extension name="coverage">
         <pattern>
@@ -160,8 +161,56 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="integtation" />
-      <option name="MAIN_CLASS_NAME" value="integtation.UserServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="databaseShouldBeEmpty" />
+      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
+      <option name="METHOD_NAME" value="sessionShouldBeCreated" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorisationRegistrationIntegrationTest.sessionShouldBeExpired" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integtation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integtation" />
+      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
+      <option name="METHOD_NAME" value="sessionShouldBeExpired" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorisationRegistrationIntegrationTest.sessionShouldNotBeExpired" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integtation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integtation" />
+      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
+      <option name="METHOD_NAME" value="sessionShouldNotBeExpired" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorisationRegistrationIntegrationTest.shouldGetException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integtation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integtation" />
+      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
+      <option name="METHOD_NAME" value="shouldGetException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -255,16 +304,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP Request.generated-requests | #3" />
-      <item itemvalue="JUnit.UserServiceIntegrationTest" />
-      <item itemvalue="JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty" />
+      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest" />
+      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldBeCreated" />
+      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldBeExpired" />
+      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldNotBeExpired" />
+      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.shouldGetException" />
       <item itemvalue="Tomcat Server.Tomcat 11.0.2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceIntegrationTest" />
-        <item itemvalue="JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty" />
-        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest" />
+        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldNotBeExpired" />
+        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldBeExpired" />
+        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldBeCreated" />
+        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.shouldGetException" />
       </list>
     </recent_temporary>
   </component>
@@ -313,7 +366,8 @@
       <workItem from="1748271933251" duration="6519000" />
       <workItem from="1748358550320" duration="2797000" />
       <workItem from="1748365639364" duration="264000" />
-      <workItem from="1748365910695" duration="5178000" />
+      <workItem from="1748365910695" duration="7337000" />
+      <workItem from="1748445028649" duration="7312000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -411,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748365730161</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="chore: configure context for integration tests, complete testConfig, add 1st test to check how it gonna works">
+      <option name="closed" value="true" />
+      <created>1748371606642</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748371606642</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +493,8 @@
     <MESSAGE value="feat: finish authorisation implementation" />
     <MESSAGE value="chore: finish authorisation implementation" />
     <MESSAGE value="chore: convert session duration from hours to seconds. Add test integration tests config and property" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: convert session duration from hours to seconds. Add test integration tests config and property" />
+    <MESSAGE value="chore: configure context for integration tests, complete testConfig, add 1st test to check how it gonna works" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: configure context for integration tests, complete testConfig, add 1st test to check how it gonna works" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

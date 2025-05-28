@@ -42,4 +42,8 @@ public class SessionService {
     public Optional<Session> findById(UUID id) {
         return sessionRepository.findById(id);
     }
+
+    public boolean isSessionExpired(Session session) {
+        return session.getExpiresAt().isBefore(LocalDateTime.now());
+    }
 }

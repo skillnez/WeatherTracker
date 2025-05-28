@@ -54,7 +54,7 @@ public class AuthInterceptor implements HandlerInterceptor {
         Optional<Session> sessionOpt = sessionService.findById(sessionUuid);
         if (sessionOpt.isPresent()) {
             Session session = sessionOpt.get();
-            if (session.getExpiresAt().isBefore(LocalDateTime.now())) {
+            if (sessionService.isSessionExpired(session)) {
                 response.sendRedirect("/login");
                 return false;
             }
