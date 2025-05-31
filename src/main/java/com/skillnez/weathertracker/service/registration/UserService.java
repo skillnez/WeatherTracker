@@ -1,6 +1,8 @@
 package com.skillnez.weathertracker.service.registration;
 
+import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.UserAuthDto;
+import com.skillnez.weathertracker.entity.Location;
 import com.skillnez.weathertracker.entity.User;
 import com.skillnez.weathertracker.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -32,4 +34,20 @@ public class UserService {
                 .build());
     }
 
+    @Transactional
+    public void addLocation (String username,LocationResponseDto locationResponseDto) {
+        User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+        Location location = Location.builder()
+                .name(locationResponseDto.getName())
+                .user(user)
+                .latitude(locationResponseDto.getLat())
+                .longitude(locationResponseDto.getLon())
+                .build();
+        if (!user.getLocations().contains(location)) {
+            user.getLocations().add(location);
+            userRepository.update(user);
+        } else {
+            throw new RuntimeException("Location already added");
+        }
+    }
 }

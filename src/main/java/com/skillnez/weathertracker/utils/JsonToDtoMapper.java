@@ -1,9 +1,13 @@
 package com.skillnez.weathertracker.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.WeatherApiResponseDto;
+
+import java.util.List;
 
 public class JsonToDtoMapper {
 
@@ -23,6 +27,12 @@ public class JsonToDtoMapper {
                 .lon(root.path("coord").path("lon").asDouble())
                 .lat(root.path("coord").path("lat").asDouble())
                 .build();
+    }
+
+    public static List<LocationResponseDto> mapToLocationResponseDto (String json) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(json, new TypeReference<List<LocationResponseDto>> () {
+        });
     }
 
 

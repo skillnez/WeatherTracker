@@ -24,20 +24,30 @@
 <section id="page-content">
     <div class="container mt-4">
         <div class="d-flex my-4">
-            <div class="input-group location-search-input-group me-3">
-                <input class="form-control" type="text" name="name" placeholder="Enter location" required>
-                <button class="btn btn-outline-secondary btn-sm clear-input-button" type="button"
-                        onclick="this.previousElementSibling.value=''">
-                    &times;
-                </button>
-            </div>
-            <button class="btn btn-outline-success">Search</button>
+            <form th:action="@{/search}" th:object="${searchForm}" method="get" class="mt-4 flex-grow-1">
+                <div class="input-group location-search-input-group">
+                    <input class="form-control"
+                           th:field="*{query}"
+                           th:classappend="${#fields.hasErrors('query')} ? ' is-invalid'"
+                           placeholder="Enter location"
+                           required />
+                    <button class="btn btn-outline-secondary btn-sm clear-input-button" type="button"
+                            onclick="this.closest('.input-group').querySelector('input').value=''">
+                        &times;
+                    </button>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+                <div class="invalid-feedback d-block"
+                     th:if="${#fields.hasErrors('query')}"
+                     th:errors="*{query}"></div>
+            </form>
         </div>
 
         <div>
             <div class="row">
                 <div class="col-12 col-lg-3 col-md-6 mb-4">
                     <div class="card h-100 position-relative weather-card">
+                        <!--Вот тут делаем форич для списка погод и переиспользуем эту форму-->
                         <div class="position-absolute weather-card-delete-form">
                             <button class="btn-close" aria-label="Delete"></button>
                         </div>
@@ -52,6 +62,7 @@
                             </p>
                             <p class="card-text mb-1">Humidity: 70%</p>
                         </div>
+                        <!--Вот тут делаем форич для списка погод и переиспользуем эту форму-->
                     </div>
                 </div>
                 <div class="col-12 col-lg-3 col-md-6 mb-4">

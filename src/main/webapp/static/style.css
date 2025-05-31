@@ -28,3 +28,17 @@ section#page-content {
 .location-search-input-group .clear-input-button {
     border-color: rgb(222, 226, 230);
 }
+
+.btn-clear-input {
+    font-size: 1.2rem;
+    color: #999;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-clear-input:focus {
+    box-shadow: none;
+    outline: none;
+}
