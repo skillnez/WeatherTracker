@@ -2,10 +2,6 @@ package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.SearchFormDto;
-import com.skillnez.weathertracker.dto.UserAuthDto;
-import com.skillnez.weathertracker.dto.WeatherApiResponseDto;
-import com.skillnez.weathertracker.entity.Location;
-import com.skillnez.weathertracker.entity.User;
 import com.skillnez.weathertracker.service.WeatherService;
 import com.skillnez.weathertracker.service.registration.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -38,7 +35,7 @@ public class SearchController {
                          Model model) {
         String username = (String) request.getAttribute("username");
         model.addAttribute("username", username);
-        model.addAttribute("addingLocationError", null);
+        model.getAttribute("addingLocationError");
         if (bindingResult.hasErrors()) {
             return "index";
         }
@@ -55,10 +52,12 @@ public class SearchController {
         return "redirect:/search?query=" + URLEncoder.encode(query, StandardCharsets.UTF_8);
     }
 
+
     @ExceptionHandler(RuntimeException.class)
-    public String handleAnyRuntime(RuntimeException e, Model model,
-                                   @RequestParam("query") String query) {
-        model.addAttribute("addingLocationError", e.getMessage());
+    public String handleRuntimeException(RuntimeException e, RedirectAttributes redirectAttributes, HttpServletRequest request) {
+        String query = request.getParameter("query");
+        if (query == null) query = "";
+        redirectAttributes.addFlashAttribute("addingLocationError", e.getMessage());
         return "redirect:/search?query=" + URLEncoder.encode(query, StandardCharsets.UTF_8);
     }
 

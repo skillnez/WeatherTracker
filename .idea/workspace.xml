@@ -9,22 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: implement mvp for WeatherService and json mapping from api response">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/LocationResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/SearchFormDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__add_unique_location_constraint.sql" afterDir="false" />
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: implement search by location name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/WeatherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/UserAuthDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/UserAuthDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/entity/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/RegistrationValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/RegistrationValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,54 +76,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "HTTP Request.generated-requests | #4.executor": "Run",
-    "JUnit.AuthorisationRegistrationIntegrationTest.executor": "Run",
-    "JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty.executor": "Run",
-    "JUnit.UserServiceIntegrationTest.executor": "Run",
-    "JUnit.UserServiceIntegrationTest.sessionShouldBeCreated.executor": "Run",
-    "JUnit.UserServiceIntegrationTest.sessionShouldBeExpired.executor": "Run",
-    "JUnit.UserServiceIntegrationTest.sessionShouldNotBeExpired.executor": "Run",
-    "JUnit.UserServiceIntegrationTest.shouldGetException.executor": "Run",
-    "JUnit.UserServiceIntegrationTest.userShouldBeRegistered.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.WeatherTracker [clean,compile].executor": "Run",
-    "Maven.WeatherTracker [clean,install].executor": "Run",
-    "Maven.WeatherTracker [clean,package].executor": "Run",
-    "Maven.WeatherTracker [clean].executor": "Run",
-    "Maven.WeatherTracker [compile].executor": "Run",
-    "Maven.WeatherTracker [dependency:tree,|,find...].executor": "Run",
-    "Maven.WeatherTracker [install].executor": "Run",
-    "Maven.WeatherTracker [package].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 11.0.2.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.preview.features.used": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/skill/IdeaProjects/WeatherTracker/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15136719",
-    "project.structure.side.proportion": "0.23709902",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorisationRegistrationIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceIntegrationTest.sessionShouldBeCreated.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceIntegrationTest.sessionShouldBeExpired.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceIntegrationTest.sessionShouldNotBeExpired.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceIntegrationTest.shouldGetException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceIntegrationTest.userShouldBeRegistered.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [clean,compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [dependency:tree,|,find...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WeatherTracker [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 11.0.2.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/skill/IdeaProjects/WeatherTracker/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15136719&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.23709902&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -368,7 +362,8 @@
       <workItem from="1748538112726" duration="3368000" />
       <workItem from="1748545437536" duration="4909000" />
       <workItem from="1748624161117" duration="9492000" />
-      <workItem from="1748682979565" duration="23538000" />
+      <workItem from="1748682979565" duration="24397000" />
+      <workItem from="1748765846855" duration="4398000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -490,7 +485,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748633556814</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: implement search by location name">
+      <option name="closed" value="true" />
+      <created>1748721178489</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748721178489</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +516,8 @@
     <MESSAGE value="chore: configure context for integration tests, complete testConfig, add 1st test to check how it gonna works" />
     <MESSAGE value="feat: implement integration tests for authorisation and registration services" />
     <MESSAGE value="feat: implement mvp for WeatherService and json mapping from api response" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement mvp for WeatherService and json mapping from api response" />
+    <MESSAGE value="feat: implement search by location name" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement search by location name" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

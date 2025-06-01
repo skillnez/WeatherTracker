@@ -8,6 +8,7 @@ import com.skillnez.weathertracker.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,11 +44,12 @@ public class UserService {
                 .latitude(locationResponseDto.getLat())
                 .longitude(locationResponseDto.getLon())
                 .build();
-        if (!user.getLocations().contains(location)) {
+        try {
             user.getLocations().add(location);
             userRepository.update(user);
-        } else {
-            throw new RuntimeException("Location already added");
+        } catch (ConstraintViolationException | DataIntegrityViolationException e) {
+            throw new RuntimeException("Location already added in your profile");
         }
+
     }
 }
