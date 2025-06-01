@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class WeatherApiResponseDto {
+    private long id;
     private String name;
     private String country;
     private Double temperature;

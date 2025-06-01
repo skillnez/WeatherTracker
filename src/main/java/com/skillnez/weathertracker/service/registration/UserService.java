@@ -50,6 +50,13 @@ public class UserService {
         } catch (ConstraintViolationException | DataIntegrityViolationException e) {
             throw new RuntimeException("Location already added in your profile");
         }
-
     }
+
+    @Transactional
+    public void deleteLocation (Long locationId,String username) {
+        User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+        user.getLocations().removeIf(location -> location.getId().equals(locationId));
+        userRepository.update(user);
+    }
+
 }

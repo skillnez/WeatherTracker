@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: implemented logout and scheduled session cleanup if session has expired">
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: implemented user locations list on main page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/MySpringMvcDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/config/MySpringMvcDispatcherServletInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherApiResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherApiResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" afterDir="false" />
@@ -363,7 +364,7 @@
       <workItem from="1748682979565" duration="24397000" />
       <workItem from="1748765846855" duration="15846000" />
       <workItem from="1748782957069" duration="160000" />
-      <workItem from="1748799921563" duration="2239000" />
+      <workItem from="1748799921563" duration="4548000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -517,7 +518,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748777705059</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: implemented user locations list on main page">
+      <option name="closed" value="true" />
+      <created>1748802345852</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1748802345852</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +564,8 @@
     <MESSAGE value="chore: refactor registration and login controller for correct error handling" />
     <MESSAGE value="feat: search by location name fully implemented" />
     <MESSAGE value="feat: implemented logout and scheduled session cleanup if session has expired" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented logout and scheduled session cleanup if session has expired" />
+    <MESSAGE value="feat: implemented user locations list on main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented user locations list on main page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

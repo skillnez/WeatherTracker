@@ -67,6 +67,7 @@ public class WeatherService {
             try {
                 WeatherApiResponseDto weatherApiResponseDto = JsonToDtoMapper.mapToWeatherApiResponseDto(response);
                 //Жесткий костыль чтобы имя добавляемой локации совпадало с именем которая будет на главной странице
+                weatherApiResponseDto.setId(location.getId());
                 weatherApiResponseDto.setName(location.getName());
                 weatherApiResponseDtoList.add(weatherApiResponseDto);
             } catch (JsonProcessingException e) {
