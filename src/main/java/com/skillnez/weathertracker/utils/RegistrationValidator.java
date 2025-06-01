@@ -10,13 +10,6 @@ import org.springframework.validation.Validator;
 @Component
 public class RegistrationValidator implements Validator {
 
-    private final UserService userService;
-
-    @Autowired
-    public RegistrationValidator(UserService userService) {
-        this.userService = userService;
-    }
-
     @Override
     public boolean supports(Class<?> clazz) {
         return UserAuthDto.class.isAssignableFrom(clazz);

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LoginController {
@@ -29,8 +30,9 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(Model model) {
-        model.addAttribute("userAuthDto", new UserAuthDto());
-        model.addAttribute("authError", null);
+        if (!model.containsAttribute("userAuthDto")) {
+            model.addAttribute("userAuthDto", new UserAuthDto());
+        }
         return "sign-in-with-errors";
     }
 
@@ -54,9 +56,9 @@ public class LoginController {
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public String handleIllegalArgument(IllegalArgumentException e, Model model) {
-        model.addAttribute("authError", e.getMessage());
-        model.addAttribute("userAuthDto", new UserAuthDto());
-        return "sign-in-with-errors";
+    public String handleIllegalArgument(IllegalArgumentException e, RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("authError", e.getMessage());
+        redirectAttributes.addFlashAttribute("userAuthDto", new UserAuthDto());
+        return "redirect:/login";
     }
 }

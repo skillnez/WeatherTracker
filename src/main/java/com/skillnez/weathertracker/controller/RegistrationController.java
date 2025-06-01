@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping()
@@ -25,8 +26,9 @@ public class RegistrationController {
 
     @GetMapping("/register")
     public String register(Model model) {
-        model.addAttribute("userAuthDto", new UserAuthDto());
-        model.addAttribute("registerError", null);
+        if (!model.containsAttribute("userAuthDto")) {
+            model.addAttribute("userAuthDto", new UserAuthDto());
+        }
         return "sign-up-with-errors";
     }
 
@@ -34,6 +36,8 @@ public class RegistrationController {
     public String register (@ModelAttribute @Valid UserAuthDto userAuthDto, BindingResult bindingResult) {
         registrationValidator.validate(userAuthDto, bindingResult);
         if (bindingResult.hasErrors()) {
+            //Интересный факт для себя на будущее
+            //(Поля Type=Password в HTML сбросятся автоматом, даже если они сохранены в модели)
             return "sign-up-with-errors";
         }
         registerFacadeService.registerUser(userAuthDto);
@@ -41,10 +45,10 @@ public class RegistrationController {
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public String handleIllegalArgument(IllegalArgumentException e, Model model) {
-        model.addAttribute("registerError", e.getMessage());
-        model.addAttribute("userAuthDto", new UserAuthDto());
-        return "sign-up-with-errors";
+    public String handleIllegalArgument(IllegalArgumentException e, RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("registerError", e.getMessage());
+        redirectAttributes.addFlashAttribute("userAuthDto", new UserAuthDto());
+        return "redirect:/register";
     }
 
 }
