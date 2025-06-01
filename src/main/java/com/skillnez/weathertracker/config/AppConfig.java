@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -23,6 +24,7 @@ import java.util.Properties;
 @ComponentScan(basePackages = "com.skillnez.weathertracker")
 @PropertySource("classpath:application.properties")
 @EnableTransactionManagement
+@EnableScheduling
 public class AppConfig {
 
     @Value("${flyway.locations}")

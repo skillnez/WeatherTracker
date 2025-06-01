@@ -29,7 +29,10 @@ public class SpringConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login", "/register", "/static/**");
+                .excludePathPatterns(
+                        "/login", "/register", "/error",
+                        "/css/**", "/js/**", "/images/**", "/favicon.ico"
+                );
     }
 
     @Override

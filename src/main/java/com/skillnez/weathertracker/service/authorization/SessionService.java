@@ -43,7 +43,33 @@ public class SessionService {
         return sessionRepository.findById(id);
     }
 
+    @Transactional
+    public void deleteSessionById(UUID id) {
+        User user = getUserBySessionId(id);
+        user.getSessions().removeIf(session -> session.getId().equals(id));
+        userRepository.update(user);
+    }
+
+    public User getUserBySessionId (UUID id) {
+        Session session = sessionRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Session not found"));
+        return userRepository.findById(session.getUser().getId())
+                .orElseThrow(() -> new NoSuchElementException("User not found"));
+    }
+
+    @Transactional
+    public void logout(UUID id, String Username) {
+        User user = userRepository.findByUsername(Username).orElseThrow(() -> new NoSuchElementException("User not found"));
+        user.getSessions().removeIf(session -> session.getId().equals(id));
+        userRepository.update(user);
+    }
+
     public boolean isSessionExpired(Session session) {
         return session.getExpiresAt().isBefore(LocalDateTime.now());
+    }
+
+    @Transactional
+    public void cleanExpiredSessions() {
+        sessionRepository.deleteExpiredSessions();
     }
 }
