@@ -1,13 +1,22 @@
 package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.SearchFormDto;
+import com.skillnez.weathertracker.service.WeatherService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
+
+    private final WeatherService weatherService;
+
+    @Autowired
+    public HomeController(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
 
     @GetMapping("/")
     public String home(Model model, HttpServletRequest request) {
@@ -16,6 +25,9 @@ public class HomeController {
         if (!model.containsAttribute("searchFormDto")) {
             model.addAttribute("searchForm", new SearchFormDto());
         }
+        model.addAttribute("userWeatherList", weatherService.getUserWeather(username));
+
+
         return "index"; // /WEB-INF/templates/index.html
     }
 }
