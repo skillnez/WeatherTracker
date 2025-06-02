@@ -46,6 +46,10 @@
         </div>
 
         <div>
+            <div th:if="${#lists.isEmpty(userWeatherList)}" class="alert alert-info mt-4">
+                You have no added locations. Add a city to see the weather forecast.
+            </div>
+            <div th:unless="${#lists.isEmpty(userWeatherList)}">
             <div class="row">
                 <div class="col-12 col-lg-3 col-md-6 mb-4" th:each="location : ${userWeatherList}">
                     <div class="card h-100 position-relative weather-card">
@@ -79,7 +83,7 @@
 
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top">
     <div class="px-4">
-        <span>© Weather Viewer, project from <a href="https://zhukovsd.github.io/java-backend-learning-course/">zhukovsd/java-backend-learning-course</a> roadmap.</span>
+        <span>© Weather Viewer, project made by <a href="https://github.com/skillnez"> Skillnez</a> project idea: zhukovsd</span>
     </div>
 </footer>
 
