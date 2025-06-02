@@ -2,6 +2,7 @@ package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.SearchFormDto;
+import com.skillnez.weathertracker.exception.LocationAddingException;
 import com.skillnez.weathertracker.service.WeatherService;
 import com.skillnez.weathertracker.service.registration.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -53,8 +54,8 @@ public class SearchController {
     }
 
 
-    @ExceptionHandler(RuntimeException.class)
-    public String handleRuntimeException(RuntimeException e, RedirectAttributes redirectAttributes, HttpServletRequest request) {
+    @ExceptionHandler(LocationAddingException.class)
+    public String handleRuntimeException(LocationAddingException e, RedirectAttributes redirectAttributes, HttpServletRequest request) {
         String query = request.getParameter("query");
         if (query == null) query = "";
         redirectAttributes.addFlashAttribute("addingLocationError", e.getMessage());

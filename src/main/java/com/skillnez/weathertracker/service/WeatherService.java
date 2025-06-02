@@ -9,6 +9,7 @@ import com.skillnez.weathertracker.entity.User;
 import com.skillnez.weathertracker.exception.ApiException;
 import com.skillnez.weathertracker.repository.UserRepository;
 import com.skillnez.weathertracker.utils.JsonToDtoMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service
 public class WeatherService {
 
@@ -36,7 +38,9 @@ public class WeatherService {
     private static final String WEATHER_DATA_API_REQUEST_BY_COORDINATES =
             "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={API key}";
 
-    private static final int CONNECTION_TIMEOUT_SECONDS = 5;
+    private static final int CONNECTION_TIMEOUT_SECONDS = 20;
+
+    private static final int requestLocationsCountLimit = 5;
 
     @Autowired
     public WeatherService(WebClient webClient, UserRepository userRepository) {
@@ -46,7 +50,7 @@ public class WeatherService {
     }
 
     public List<LocationResponseDto> getGeoByCityName(String city) {
-        String response = getApiResponse(GEOCODING_API_REQUEST_BY_NAME, city, apiKey);
+        String response = getApiResponse(GEOCODING_API_REQUEST_BY_NAME, city, requestLocationsCountLimit, apiKey);
         try {
             return JsonToDtoMapper.mapToLocationResponseDto(response);
         } catch (JsonProcessingException e) {
@@ -90,11 +94,24 @@ public class WeatherService {
                 .retrieve()
                 .onStatus(httpStatusCode -> httpStatusCode.is4xxClientError() || httpStatusCode.is5xxServerError(),
                         clientResponse -> clientResponse.bodyToMono(String.class)
-                                .map(body -> new ApiException("Api response error has occurred " + body))
+                                .map(body -> {
+                                    log.error("API error. Status: {}, Body: {}", clientResponse.statusCode(), body);
+                                    return new ApiException("Api response error has occurred " + body);
+                                })
                 )
                 .bodyToMono(String.class)
+                .doOnSubscribe(subscription ->
+                        log.info("Calling external API: {}", requestUri)
+                )
+                .doOnSuccess(body ->
+                        log.debug("Received response from {}: {}", requestUri, body)
+                )
+                .doOnError(e ->
+                        log.error("Error during API call to {}: {}", requestUri, e.getMessage(), e)
+                )
                 .onErrorResume(e -> Mono.error(new ApiException("Unexpected api response error has occurred")))
                 .timeout(Duration.ofSeconds(CONNECTION_TIMEOUT_SECONDS))
+                .log()
                 .block();
     }
 }

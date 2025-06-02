@@ -9,16 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: now location can be removed from user locations list from main page">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherCardResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/exception/ApiException.java" afterDir="false" />
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore!: big refactor of WeatherService">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/exception/LocationAddingException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherApiResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherApiResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/SearchFormDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/SearchFormDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +33,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Exception" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -368,7 +368,7 @@
       <workItem from="1748782957069" duration="160000" />
       <workItem from="1748799921563" duration="4961000" />
       <workItem from="1748805013334" duration="21000" />
-      <workItem from="1748873304549" duration="5432000" />
+      <workItem from="1748873304549" duration="8994000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -538,7 +538,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748804898778</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: implement error page and @ControllerAdvice for this">
+      <option name="closed" value="true" />
+      <created>1748878930209</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1748878930209</updated>
+    </task>
+    <task id="LOCAL-00023" summary="chore!: big refactor of WeatherService">
+      <option name="closed" value="true" />
+      <created>1748879006608</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1748879006608</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +594,9 @@
     <MESSAGE value="feat: implemented logout and scheduled session cleanup if session has expired" />
     <MESSAGE value="feat: implemented user locations list on main page" />
     <MESSAGE value="feat: now location can be removed from user locations list from main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: now location can be removed from user locations list from main page" />
+    <MESSAGE value="feat: implement error page and @ControllerAdvice for this" />
+    <MESSAGE value="chore!: big refactor of WeatherService" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore!: big refactor of WeatherService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

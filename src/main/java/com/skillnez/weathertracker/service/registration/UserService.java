@@ -4,6 +4,7 @@ import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.UserAuthDto;
 import com.skillnez.weathertracker.entity.Location;
 import com.skillnez.weathertracker.entity.User;
+import com.skillnez.weathertracker.exception.LocationAddingException;
 import com.skillnez.weathertracker.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
@@ -48,7 +49,7 @@ public class UserService {
             user.getLocations().add(location);
             userRepository.update(user);
         } catch (ConstraintViolationException | DataIntegrityViolationException e) {
-            throw new RuntimeException("Location already added in your profile");
+            throw new LocationAddingException("Location already added in your profile");
         }
     }
 
