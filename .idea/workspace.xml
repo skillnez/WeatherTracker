@@ -9,15 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: implemented user locations list on main page">
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="feat: now location can be removed from user locations list from main page">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherCardResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/exception/ApiException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherApiResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/dto/WeatherApiResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/registration/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/error.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +33,7 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -364,7 +366,9 @@
       <workItem from="1748682979565" duration="24397000" />
       <workItem from="1748765846855" duration="15846000" />
       <workItem from="1748782957069" duration="160000" />
-      <workItem from="1748799921563" duration="4548000" />
+      <workItem from="1748799921563" duration="4961000" />
+      <workItem from="1748805013334" duration="21000" />
+      <workItem from="1748873304549" duration="5432000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -526,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748802345852</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feat: now location can be removed from user locations list from main page">
+      <option name="closed" value="true" />
+      <created>1748804898778</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1748804898778</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +577,8 @@
     <MESSAGE value="feat: search by location name fully implemented" />
     <MESSAGE value="feat: implemented logout and scheduled session cleanup if session has expired" />
     <MESSAGE value="feat: implemented user locations list on main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented user locations list on main page" />
+    <MESSAGE value="feat: now location can be removed from user locations list from main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: now location can be removed from user locations list from main page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
