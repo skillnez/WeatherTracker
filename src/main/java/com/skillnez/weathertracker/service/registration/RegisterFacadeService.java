@@ -1,6 +1,7 @@
 package com.skillnez.weathertracker.service.registration;
 
 import com.skillnez.weathertracker.dto.UserAuthDto;
+import com.skillnez.weathertracker.exception.UserAlreadyExistsException;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,11 +16,11 @@ public class RegisterFacadeService {
     }
 
     @Transactional
-    public void registerUser(UserAuthDto userAuthDto) {
+    public void registerUser(UserAuthDto userAuthDto) throws UserAlreadyExistsException {
         try {
             userService.saveUser(userAuthDto);
         } catch (ConstraintViolationException e) {
-            throw new IllegalArgumentException("Account with this username " + userAuthDto.getUsername() + " already exists");
+            throw new UserAlreadyExistsException("Account with this username " + userAuthDto.getUsername() + " already exists");
         }
 
     }

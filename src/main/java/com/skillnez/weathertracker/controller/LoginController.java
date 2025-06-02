@@ -2,6 +2,7 @@ package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.UserAuthDto;
 import com.skillnez.weathertracker.entity.Session;
+import com.skillnez.weathertracker.exception.InvalidCredentialsException;
 import com.skillnez.weathertracker.service.authorization.AuthFacadeService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
@@ -36,7 +37,9 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginPost(@ModelAttribute @Valid UserAuthDto userAuthDto, BindingResult bindingResult, HttpServletResponse response) {
+    public String loginPost(@ModelAttribute @Valid UserAuthDto userAuthDto,
+                            BindingResult bindingResult,
+                            HttpServletResponse response) {
         if (bindingResult.hasErrors()) {
             return "sign-in-with-errors";
         }
@@ -52,8 +55,8 @@ public class LoginController {
         return "redirect:/";
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public String handleIllegalArgument(IllegalArgumentException e, RedirectAttributes redirectAttributes) {
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public String handleInvalidCredentialsException(InvalidCredentialsException e, RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("authError", e.getMessage());
         redirectAttributes.addFlashAttribute("userAuthDto", new UserAuthDto());
         return "redirect:/login";

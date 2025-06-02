@@ -1,6 +1,7 @@
 package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.UserAuthDto;
+import com.skillnez.weathertracker.exception.UserAlreadyExistsException;
 import com.skillnez.weathertracker.service.registration.RegisterFacadeService;
 import com.skillnez.weathertracker.utils.RegistrationValidator;
 import jakarta.validation.Valid;
@@ -44,8 +45,8 @@ public class RegistrationController {
         return "redirect:/login";
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public String handleIllegalArgument(IllegalArgumentException e, RedirectAttributes redirectAttributes) {
+    @ExceptionHandler(UserAlreadyExistsException.class)
+    public String handleUserAlreadyExistsException(UserAlreadyExistsException e, RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("registerError", e.getMessage());
         redirectAttributes.addFlashAttribute("userAuthDto", new UserAuthDto());
         return "redirect:/register";
