@@ -9,9 +9,8 @@ import java.util.Optional;
 
 public abstract class BaseRepository<K extends Serializable, E extends BaseEntity<K>> implements Repository<K, E> {
 
-    private final Class<E> clazz;
-
     protected final SessionFactory sessionFactory;
+    private final Class<E> clazz;
 
     protected BaseRepository(Class<E> clazz, SessionFactory sessionFactory) {
         this.clazz = clazz;

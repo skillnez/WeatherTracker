@@ -8,15 +8,14 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Repository
-public class SessionRepository extends BaseRepository<UUID,Session> {
+public class SessionRepository extends BaseRepository<UUID, Session> {
 
     protected SessionRepository(SessionFactory sessionFactory) {
         super(Session.class, sessionFactory);
     }
 
     public void deleteExpiredSessions() {
-        sessionFactory.getCurrentSession()
-                .createQuery("delete from Session s where s.expiresAt < :now")
+        sessionFactory.getCurrentSession().createQuery("delete from Session s where s.expiresAt < :now")
                 .setParameter("now", LocalDateTime.now()).executeUpdate();
     }
 

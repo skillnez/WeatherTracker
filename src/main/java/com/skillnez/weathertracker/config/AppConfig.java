@@ -16,7 +16,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.reactive.function.client.WebClient;
 
-
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -38,13 +37,9 @@ public class AppConfig {
     @Value("${db.password}")
     private String password;
 
-    //Flyway Config
     @Bean(initMethod = "migrate")
     public Flyway flyway(DataSource dataSource) {
-        return Flyway.configure()
-                .dataSource(dataSource)
-                .locations(locations)
-                .load();
+        return Flyway.configure().dataSource(dataSource).locations(locations).load();
     }
 
     @Bean
@@ -57,8 +52,6 @@ public class AppConfig {
         return dataSource;
     }
 
-
-    //Hibernate Config
     @Bean
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
@@ -72,7 +65,6 @@ public class AppConfig {
 
         return factoryBean;
     }
-
 
     @Bean
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {

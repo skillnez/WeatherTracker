@@ -30,14 +30,11 @@ public class UserService {
     @Transactional
     protected void saveUser(UserAuthDto userAuthDto) throws ConstraintViolationException {
         String encodedPassword = passwordEncoder.encode(userAuthDto.getPassword());
-        userRepository.save(User.builder()
-                .login(userAuthDto.getUsername())
-                .password(encodedPassword)
-                .build());
+        userRepository.save(User.builder().login(userAuthDto.getUsername()).password(encodedPassword).build());
     }
 
     @Transactional
-    public void addLocation (String username,LocationResponseDto locationResponseDto) {
+    public void addLocation(String username, LocationResponseDto locationResponseDto) {
         User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
         Location location = Location.builder()
                 .name(locationResponseDto.getName())
@@ -54,7 +51,7 @@ public class UserService {
     }
 
     @Transactional
-    public void deleteLocation (Long locationId,String username) {
+    public void deleteLocation(Long locationId, String username) {
         User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
         user.getLocations().removeIf(location -> location.getId().equals(locationId));
         userRepository.update(user);

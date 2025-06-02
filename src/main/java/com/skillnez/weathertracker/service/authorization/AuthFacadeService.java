@@ -16,7 +16,7 @@ public class AuthFacadeService {
         this.sessionService = sessionService;
     }
 
-    public Session login (UserAuthDto userAuthDto) throws IllegalArgumentException {
+    public Session login(UserAuthDto userAuthDto) throws IllegalArgumentException {
         User user = authService.authenticate(userAuthDto)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid username or password"));
         return sessionService.save(user);

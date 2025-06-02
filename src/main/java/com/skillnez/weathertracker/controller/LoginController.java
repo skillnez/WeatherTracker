@@ -20,13 +20,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class LoginController {
 
     private final AuthFacadeService authFacadeService;
+    @Value("${session.lifetime.seconds}")
+    private int lifetimeSeconds;
 
     public LoginController(AuthFacadeService authFacadeService) {
         this.authFacadeService = authFacadeService;
     }
-
-    @Value("${session.lifetime.seconds}")
-    private int lifetimeSeconds;
 
     @GetMapping("/login")
     public String login(Model model) {
@@ -37,9 +36,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginPost(@ModelAttribute @Valid UserAuthDto userAuthDto,
-                            BindingResult bindingResult,
-                            HttpServletResponse response) {
+    public String loginPost(@ModelAttribute @Valid UserAuthDto userAuthDto, BindingResult bindingResult, HttpServletResponse response) {
         if (bindingResult.hasErrors()) {
             return "sign-in-with-errors";
         }

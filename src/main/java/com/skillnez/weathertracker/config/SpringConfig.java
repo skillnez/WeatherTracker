@@ -29,16 +29,12 @@ public class SpringConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns(
-                        "/login", "/register", "/error",
-                        "/css/**", "/js/**", "/images/**", "/favicon.ico"
-                );
+                .excludePathPatterns("/login", "/register", "/error", "/css/**", "/js/**", "/images/**", "/favicon.ico");
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**")
-                .addResourceLocations("/static/");
+        registry.addResourceHandler("/static/**").addResourceLocations("/static/");
     }
 
     @Bean

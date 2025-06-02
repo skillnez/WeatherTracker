@@ -23,9 +23,9 @@ public class AuthService {
     }
 
     @Transactional(readOnly = true)
-    protected Optional<User> authenticate (UserAuthDto userAuthDto) {
-        return userRepository.findByUsername(userAuthDto.getUsername()).
-                filter(user -> passwordEncoder.matches(userAuthDto.getPassword(), user.getPassword()));
+    protected Optional<User> authenticate(UserAuthDto userAuthDto) {
+        return userRepository.findByUsername(userAuthDto.getUsername())
+                .filter(user -> passwordEncoder.matches(userAuthDto.getPassword(), user.getPassword()));
     }
 
 }

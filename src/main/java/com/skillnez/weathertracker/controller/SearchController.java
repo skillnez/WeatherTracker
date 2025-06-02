@@ -53,16 +53,13 @@ public class SearchController {
         return "redirect:/search?query=" + URLEncoder.encode(query, StandardCharsets.UTF_8);
     }
 
-
     @ExceptionHandler(LocationAddingException.class)
-    public String handleRuntimeException(LocationAddingException e, RedirectAttributes redirectAttributes, HttpServletRequest request) {
+    public String handleLocationAddingException(LocationAddingException e,
+                                         RedirectAttributes redirectAttributes,
+                                         HttpServletRequest request) {
         String query = request.getParameter("query");
         if (query == null) query = "";
         redirectAttributes.addFlashAttribute("addingLocationError", e.getMessage());
         return "redirect:/search?query=" + URLEncoder.encode(query, StandardCharsets.UTF_8);
     }
-
-    //todo добавь @ExceptionHandler для UserService метода addLocation
-
-
 }
