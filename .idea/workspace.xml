@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: add more informative exceptions for exceptions that can be caught in controllers">
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: add description for pages without search results and weather cards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search-results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/skillnez/weathertracker/config/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/skillnez/weathertracker/config/TestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/integtation/AuthorisationRegistrationIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/integtation/AuthorisationRegistrationIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,7 +363,8 @@
       <workItem from="1748782957069" duration="160000" />
       <workItem from="1748799921563" duration="4961000" />
       <workItem from="1748805013334" duration="21000" />
-      <workItem from="1748873304549" duration="11778000" />
+      <workItem from="1748873304549" duration="12279000" />
+      <workItem from="1748962464614" duration="6189000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -573,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748885643732</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="chore: add description for pages without search results and weather cards">
+      <option name="closed" value="true" />
+      <created>1748886724419</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1748886724419</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: fix log4j.properties" />
     <MESSAGE value="fix: fix DataSourceConfig and FlywayConfig" />
     <MESSAGE value="feat: add entity model hibernate mapping" />
     <MESSAGE value="feat: add repository layer" />
@@ -616,7 +624,8 @@
     <MESSAGE value="chore!: search controller and UserService small refactor" />
     <MESSAGE value="chore: code formatting in all project" />
     <MESSAGE value="chore: add more informative exceptions for exceptions that can be caught in controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: add more informative exceptions for exceptions that can be caught in controllers" />
+    <MESSAGE value="chore: add description for pages without search results and weather cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: add description for pages without search results and weather cards" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

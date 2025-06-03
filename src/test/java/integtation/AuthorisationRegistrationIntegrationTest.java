@@ -5,6 +5,7 @@ import com.skillnez.weathertracker.config.TestConfig;
 import com.skillnez.weathertracker.dto.UserAuthDto;
 import com.skillnez.weathertracker.entity.Session;
 import com.skillnez.weathertracker.entity.User;
+import com.skillnez.weathertracker.exception.UserAlreadyExistsException;
 import com.skillnez.weathertracker.repository.SessionRepository;
 import com.skillnez.weathertracker.repository.UserRepository;
 import com.skillnez.weathertracker.service.authorization.AuthFacadeService;
@@ -15,6 +16,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -26,8 +28,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration (classes = TestConfig.class)
-@TestPropertySource (locations = "classpath:application-test.properties")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@ActiveProfiles("test")
 public class AuthorisationRegistrationIntegrationTest {
 
     @Autowired
@@ -61,7 +63,7 @@ public class AuthorisationRegistrationIntegrationTest {
     void shouldGetException() {
         UserAuthDto userAuthDto = new UserAuthDto("Username", "Password", "Password");
         registerFacadeService.registerUser(userAuthDto);
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        Exception exception = assertThrows(UserAlreadyExistsException.class, () -> {
             registerFacadeService.registerUser(userAuthDto);
         });
         assertEquals("Account with this username " + userAuthDto.getUsername() + " already exists"

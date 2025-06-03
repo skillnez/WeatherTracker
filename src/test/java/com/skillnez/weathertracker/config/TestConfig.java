@@ -22,8 +22,8 @@ import java.util.Properties;
         basePackages = {
                 "com.skillnez.weathertracker.repository",
                 "com.skillnez.weathertracker.service"
-
         })
+@Profile("test")
 public class TestConfig {
 
     @Value("${spring.flyway.locations}")
