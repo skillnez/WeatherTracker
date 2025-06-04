@@ -3,8 +3,8 @@ package com.skillnez.weathertracker.controller;
 import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.SearchFormDto;
 import com.skillnez.weathertracker.exception.LocationAddingException;
+import com.skillnez.weathertracker.service.LocationService;
 import com.skillnez.weathertracker.service.WeatherService;
-import com.skillnez.weathertracker.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +21,12 @@ import java.nio.charset.StandardCharsets;
 public class SearchController {
 
     private final WeatherService weatherService;
-    private final UserService userService;
+    private final LocationService locationService;
 
     @Autowired
-    public SearchController(WeatherService weatherService, UserService userService) {
+    public SearchController(WeatherService weatherService, LocationService locationService) {
         this.weatherService = weatherService;
-        this.userService = userService;
+        this.locationService = locationService;
     }
 
     @GetMapping("/search")
@@ -49,7 +49,7 @@ public class SearchController {
                               @RequestParam("query") String query,
                               HttpServletRequest request) {
         String username = (String) request.getAttribute("username");
-        userService.addLocation(username, locationResponseDto);
+        locationService.addLocation(username, locationResponseDto);
         return "redirect:/search?query=" + URLEncoder.encode(query, StandardCharsets.UTF_8);
     }
 
