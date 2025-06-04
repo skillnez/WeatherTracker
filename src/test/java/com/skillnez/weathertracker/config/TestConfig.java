@@ -1,5 +1,6 @@
 package com.skillnez.weathertracker.config;
 
+import okhttp3.mockwebserver.MockWebServer;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.flywaydb.core.Flyway;
 import org.hibernate.SessionFactory;
@@ -12,12 +13,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import javax.sql.DataSource;
+import java.io.IOException;
 import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:application-test.properties")
-//Если componentScan захватит случайно EnableWebMvc или какой-нибудь Interceptor - будет жопа
-//Как вариант нужные сервисы для тестов указывать в TestConfig через @Bean или так как это сделано нижеЫ
+//Если componentScan захватит случайно EnableWebMvc или какой-нибудь Interceptor - будет жопа,
+//сканируй для тестов только то что необходимо
 @ComponentScan(
         basePackages = {
                 "com.skillnez.weathertracker.repository",
@@ -80,8 +82,13 @@ public class TestConfig {
     }
 
     @Bean
-    public WebClient webClient() {
-        return WebClient.builder().build();
+    public WebClient webClient(MockWebServer server) {
+        return WebClient.builder().baseUrl(mockWebServer().url("/").toString()).build();
     }
 
+    @Bean
+    public MockWebServer mockWebServer() {
+
+        return new MockWebServer();
+    }
 }

@@ -9,11 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: add description for pages without search results and weather cards">
+    <list default="true" id="4db164c4-84ac-43a8-8db0-df751d8cd25b" name="Changes" comment="chore: minor test configuration refactor">
+      <change afterPath="$PROJECT_DIR$/src/test/java/integtation/WeatherApiServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/service/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/skillnez/weathertracker/utils/JsonToDtoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/skillnez/weathertracker/config/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/skillnez/weathertracker/config/TestConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/integtation/AuthorisationRegistrationIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/integtation/AuthorisationRegistrationIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +33,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,54 +77,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorisationRegistrationIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceIntegrationTest.sessionShouldBeCreated.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceIntegrationTest.sessionShouldBeExpired.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceIntegrationTest.sessionShouldNotBeExpired.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceIntegrationTest.shouldGetException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceIntegrationTest.userShouldBeRegistered.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean,compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [dependency:tree,|,find...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WeatherTracker [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 11.0.2.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/skill/IdeaProjects/WeatherTracker/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15136719&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.23709902&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "JUnit.AuthorisationRegistrationIntegrationTest.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.databaseShouldBeEmpty.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.sessionShouldBeCreated.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.sessionShouldBeExpired.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.sessionShouldNotBeExpired.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.shouldGetException.executor": "Run",
+    "JUnit.UserServiceIntegrationTest.userShouldBeRegistered.executor": "Run",
+    "JUnit.WeatherApiServiceTest.executor": "Run",
+    "JUnit.WeatherApiServiceTest.makeGeoCodingRequestByName.executor": "Run",
+    "JUnit.WeatherApiServiceTest.shouldThrowApiExceptionOn404StatusCode.executor": "Run",
+    "JUnit.WeatherApiServiceTest.shouldThrowApiExceptionOn500StatusCode.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.WeatherTracker [clean,compile].executor": "Run",
+    "Maven.WeatherTracker [clean,install].executor": "Run",
+    "Maven.WeatherTracker [clean,package].executor": "Run",
+    "Maven.WeatherTracker [clean].executor": "Run",
+    "Maven.WeatherTracker [compile].executor": "Run",
+    "Maven.WeatherTracker [dependency:tree,|,find...].executor": "Run",
+    "Maven.WeatherTracker [install].executor": "Run",
+    "Maven.WeatherTracker [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 11.0.2.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.preview.features.used": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/skill/IdeaProjects/WeatherTracker/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15136719",
+    "project.structure.side.proportion": "0.23709902",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -149,11 +158,8 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 11.0.2">
-    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="AuthorisationRegistrationIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WeatherApiServiceTest">
+    <configuration name="WeatherApiServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherTracker" />
       <extension name="coverage">
         <pattern>
@@ -162,13 +168,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="integtation" />
-      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="integtation.WeatherApiServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthorisationRegistrationIntegrationTest.sessionShouldBeExpired" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WeatherApiServiceTest.makeGeoCodingRequestByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherTracker" />
       <extension name="coverage">
         <pattern>
@@ -177,14 +183,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="integtation" />
-      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
-      <option name="METHOD_NAME" value="sessionShouldBeExpired" />
+      <option name="MAIN_CLASS_NAME" value="integtation.WeatherApiServiceTest" />
+      <option name="METHOD_NAME" value="makeGeoCodingRequestByName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthorisationRegistrationIntegrationTest.sessionShouldNotBeExpired" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WeatherApiServiceTest.shouldThrowApiExceptionOn404StatusCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WeatherTracker" />
       <extension name="coverage">
         <pattern>
@@ -193,8 +199,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="integtation" />
-      <option name="MAIN_CLASS_NAME" value="integtation.AuthorisationRegistrationIntegrationTest" />
-      <option name="METHOD_NAME" value="sessionShouldNotBeExpired" />
+      <option name="MAIN_CLASS_NAME" value="integtation.WeatherApiServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowApiExceptionOn404StatusCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherApiServiceTest.shouldThrowApiExceptionOn500StatusCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WeatherTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integtation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integtation" />
+      <option name="MAIN_CLASS_NAME" value="integtation.WeatherApiServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowApiExceptionOn500StatusCode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -291,20 +313,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP Request.generated-requests | #4" />
       <item itemvalue="JavaScript Debug.index.html" />
-      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest" />
-      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldBeExpired" />
-      <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldNotBeExpired" />
+      <item itemvalue="JUnit.WeatherApiServiceTest.makeGeoCodingRequestByName" />
+      <item itemvalue="JUnit.WeatherApiServiceTest.shouldThrowApiExceptionOn404StatusCode" />
+      <item itemvalue="JUnit.WeatherApiServiceTest.shouldThrowApiExceptionOn500StatusCode" />
+      <item itemvalue="JUnit.WeatherApiServiceTest" />
       <item itemvalue="Tomcat Server.Tomcat 11.0.2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WeatherApiServiceTest" />
+        <item itemvalue="JUnit.WeatherApiServiceTest.shouldThrowApiExceptionOn500StatusCode" />
+        <item itemvalue="JUnit.WeatherApiServiceTest.shouldThrowApiExceptionOn404StatusCode" />
+        <item itemvalue="JUnit.WeatherApiServiceTest.makeGeoCodingRequestByName" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="HTTP Request.generated-requests | #4" />
-        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest" />
-        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldNotBeExpired" />
-        <item itemvalue="JUnit.AuthorisationRegistrationIntegrationTest.sessionShouldBeExpired" />
       </list>
     </recent_temporary>
   </component>
@@ -364,7 +386,8 @@
       <workItem from="1748799921563" duration="4961000" />
       <workItem from="1748805013334" duration="21000" />
       <workItem from="1748873304549" duration="12279000" />
-      <workItem from="1748962464614" duration="6189000" />
+      <workItem from="1748962464614" duration="12218000" />
+      <workItem from="1749051119950" duration="7467000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -582,7 +605,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748886724419</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="chore: minor test configuration refactor">
+      <option name="closed" value="true" />
+      <created>1748968876594</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1748968876594</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +631,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: fix DataSourceConfig and FlywayConfig" />
     <MESSAGE value="feat: add entity model hibernate mapping" />
     <MESSAGE value="feat: add repository layer" />
     <MESSAGE value="feat: implement base registration page and validation on controller side" />
@@ -625,7 +655,8 @@
     <MESSAGE value="chore: code formatting in all project" />
     <MESSAGE value="chore: add more informative exceptions for exceptions that can be caught in controllers" />
     <MESSAGE value="chore: add description for pages without search results and weather cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: add description for pages without search results and weather cards" />
+    <MESSAGE value="chore: minor test configuration refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: minor test configuration refactor" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

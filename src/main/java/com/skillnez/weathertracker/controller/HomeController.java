@@ -2,7 +2,7 @@ package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.SearchFormDto;
 import com.skillnez.weathertracker.service.WeatherService;
-import com.skillnez.weathertracker.service.registration.UserService;
+import com.skillnez.weathertracker.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

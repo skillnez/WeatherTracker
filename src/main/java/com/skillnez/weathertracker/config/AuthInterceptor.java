@@ -1,7 +1,7 @@
 package com.skillnez.weathertracker.config;
 
 import com.skillnez.weathertracker.entity.Session;
-import com.skillnez.weathertracker.service.authorization.SessionService;
+import com.skillnez.weathertracker.service.SessionService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

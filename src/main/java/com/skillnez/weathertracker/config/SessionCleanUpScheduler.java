@@ -1,6 +1,6 @@
 package com.skillnez.weathertracker.config;
 
-import com.skillnez.weathertracker.service.authorization.SessionService;
+import com.skillnez.weathertracker.service.SessionService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

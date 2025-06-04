@@ -4,7 +4,7 @@ import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.SearchFormDto;
 import com.skillnez.weathertracker.exception.LocationAddingException;
 import com.skillnez.weathertracker.service.WeatherService;
-import com.skillnez.weathertracker.service.registration.UserService;
+import com.skillnez.weathertracker.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

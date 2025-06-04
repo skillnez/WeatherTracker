@@ -1,4 +1,4 @@
-package com.skillnez.weathertracker.service.registration;
+package com.skillnez.weathertracker.service;
 
 import com.skillnez.weathertracker.dto.LocationResponseDto;
 import com.skillnez.weathertracker.dto.UserAuthDto;

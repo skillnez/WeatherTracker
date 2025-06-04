@@ -1,4 +1,4 @@
-package com.skillnez.weathertracker.service.registration;
+package com.skillnez.weathertracker.service;
 
 import com.skillnez.weathertracker.dto.UserAuthDto;
 import com.skillnez.weathertracker.exception.UserAlreadyExistsException;

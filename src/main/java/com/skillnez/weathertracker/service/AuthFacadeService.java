@@ -1,4 +1,4 @@
-package com.skillnez.weathertracker.service.authorization;
+package com.skillnez.weathertracker.service;
 
 import com.skillnez.weathertracker.dto.UserAuthDto;
 import com.skillnez.weathertracker.entity.Session;

@@ -3,7 +3,7 @@ package com.skillnez.weathertracker.controller;
 import com.skillnez.weathertracker.dto.UserAuthDto;
 import com.skillnez.weathertracker.entity.Session;
 import com.skillnez.weathertracker.exception.InvalidCredentialsException;
-import com.skillnez.weathertracker.service.authorization.AuthFacadeService;
+import com.skillnez.weathertracker.service.AuthFacadeService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;

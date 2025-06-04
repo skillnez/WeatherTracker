@@ -2,7 +2,7 @@ package com.skillnez.weathertracker.controller;
 
 import com.skillnez.weathertracker.dto.UserAuthDto;
 import com.skillnez.weathertracker.exception.UserAlreadyExistsException;
-import com.skillnez.weathertracker.service.registration.RegisterFacadeService;
+import com.skillnez.weathertracker.service.RegisterFacadeService;
 import com.skillnez.weathertracker.utils.RegistrationValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

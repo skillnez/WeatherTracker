@@ -8,9 +8,9 @@ import com.skillnez.weathertracker.entity.User;
 import com.skillnez.weathertracker.exception.UserAlreadyExistsException;
 import com.skillnez.weathertracker.repository.SessionRepository;
 import com.skillnez.weathertracker.repository.UserRepository;
-import com.skillnez.weathertracker.service.authorization.AuthFacadeService;
-import com.skillnez.weathertracker.service.authorization.SessionService;
-import com.skillnez.weathertracker.service.registration.RegisterFacadeService;
+import com.skillnez.weathertracker.service.AuthFacadeService;
+import com.skillnez.weathertracker.service.SessionService;
+import com.skillnez.weathertracker.service.RegisterFacadeService;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,6 +29,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration (classes = TestConfig.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestPropertySource(locations = "classpath:application-test.properties")
 @ActiveProfiles("test")
 public class AuthorisationRegistrationIntegrationTest {
 

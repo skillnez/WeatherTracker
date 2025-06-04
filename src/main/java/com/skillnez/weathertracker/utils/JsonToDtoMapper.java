@@ -28,7 +28,7 @@ public class JsonToDtoMapper {
 
     public static List<LocationResponseDto> mapToLocationResponseDto (String json) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(json, new TypeReference<List<LocationResponseDto>> () {
+        return mapper.readValue(json, new TypeReference<>() {
         });
     }
 

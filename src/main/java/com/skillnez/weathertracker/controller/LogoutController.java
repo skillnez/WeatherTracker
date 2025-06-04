@@ -1,6 +1,6 @@
 package com.skillnez.weathertracker.controller;
 
-import com.skillnez.weathertracker.service.authorization.SessionService;
+import com.skillnez.weathertracker.service.SessionService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
